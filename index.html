@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borderless Bowls | Earthy, Global, Nutritious</title>
+    <style>
+        /* Color Palette Anchors based on your Concept Image */
+        :root {
+            --sage-green: #6E8E75;
+            --deep-terracotta: #A65B47;
+            --warm-wood: #4A3525;
+            --soft-cream: #F9F6F0;
+            --dark-charcoal: #2B2A27;
+            --muted-clay: #DCA07A;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--soft-cream);
+            color: var(--dark-charcoal);
+            line-height: 1.6;
+        }
+
+        /* Navigation Header */
+        header {
+            background-color: var(--soft-cream);
+            border-bottom: 1px solid rgba(74, 53, 37, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--warm-wood);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links a {
+            color: var(--dark-charcoal);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(43, 42, 39, 0.5), rgba(43, 42, 39, 0.6)), url('placeholder-concept.jpg') center/cover no-repeat;
+            background-color: var(--warm-wood); /* Fallback */
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--soft-cream);
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            max-width: 800px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--deep-terracotta);
+            color: var(--soft-cream);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #8D493A;
+        }
+
+        /* Mission / Intro Section */
+        .intro {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .intro h2 {
+            color: var(--warm-wood);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Featured Menu Grid */
+        .menu-preview {
+            background-color: #EFECE6;
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--warm-wood);
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1-fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background-color: var(--soft-cream);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--sage-green);
+        }
+
+        .card-content {
+            padding: 2rem;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            color: var(--warm-wood);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-price {
+            color: var(--deep-terracotta);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Info Section (Hours & Location) */
+        .info {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .info { grid-template-columns: 1fr; gap: 2.5rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Kept basic for single-page utility */
+        }
+
+        .info-block h3 {
+            color: var(--sage-green);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--muted-clay);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .info-block p {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-charcoal);
+            color: #A6A4A0;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Borderless Bowls</a>
+            <nav class="nav-links">
+                <a href="#about">Our Story</a>
+                <a href="#menu">Menu</a>
+                <a href="#visit">Hours & Location</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Fresh Flavors, Happy Moments</h1>
+        <p>Nutritious, earth-inspired bowls crafted with wholesome, responsibly sourced ingredients served with comfort in mind.</p>
+        <a href="#menu" class="btn">Explore Our Menu</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="intro" id="about">
+        <h2>Naturally Crafted Comfort Food</h2>
+        <p>Welcome to Borderless Bowls. Our physical concept store utilizes grounding clay tones, rich natural woodworks, and nourishing sage colors to replicate the peace of nature. We believe wholesome, healthy food should provide ultimate comfort without physical or geographic boundaries.</p>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-preview" id="menu">
+        <h2 class="section-title">Signature Bowls</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">The Earth & Harvest Bowl</h3>
+                    <div class="card-price">$14.50</div>
+                    <p>Wild organic brown rice, roasted sweet potatoes, charred broccoli, avocado, shredded kale, and creamy house tahini dressing.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">Spiced Clay Protein Bowl</h3>
+                    <div class="card-price">$15.75</div>
+                    <p>Fluffy quinoa, grilled adobo chicken, dark black beans, roasted corn salsa, sweet pickled onions, and cilantro-lime emulsion.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">Greenhouse Sage Bowl</h3>
+                    <div class="card-price">$13.50</div>
+                    <p>Crisp baby spinach, massaged arugula, firm herb-crusted tofu, cucumbers, toasted pumpkin seeds, with a zesty lemon-herb vinaigrette.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Section -->
+    <section class="info" id="visit">
+        <div class="info-block">
+            <h3>Find Us</h3>
+            <p><strong>Borderless Bowls Concept Kitchen</strong></p>
+            <p>123 Main Street</p>
+            <p>City Center, ST 12345</p>
+            <p style="margin-top: 1rem; font-style: italic; color: #666;">Look for our warm wooden storefront signage!</p>
+        </div>
+        <div class="info-block">
+            <h3>Hours of Comfort</h3>
+            <p><strong>Monday – Friday:</strong> 11:00 AM – 9:00 PM</p>
+            <p><strong>Saturday – Sunday:</strong> 10:00 AM – 10:00 PM</p>
+            <p style="margin-top: 1rem;"><strong>Contact:</strong> hello@borderlessbowls.com</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Borderless Bowls. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
