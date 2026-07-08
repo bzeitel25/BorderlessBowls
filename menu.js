@@ -60,6 +60,18 @@ const menuItems = [
     region: "INDIA | VEGAN",
     description: "Aromatic, deeply spiced coconut curry with tender chickpeas.",
     image: "chickpea_curry.jpg"
+  },
+  {
+    name: "Pad Thai",
+    region: "THAILAND | VEGAN",
+    description: "Classic stir-fried rice noodles with tofu, peanuts, and tamarind.",
+    image: "pad_thai.jpg"
+  },
+  {
+    name: "Harira",
+    region: "MOROCCO | VEGAN",
+    description: "A warming, fragrant tomato, lentil, and chickpea stew.",
+    image: "harira.jpg"
   }
 ];
 
